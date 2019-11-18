@@ -9,30 +9,596 @@
       "h": "rel(1)"
     },
     "bar#window_bar": {
-      "c": "#0d0d0d",
+      "color": "#0d0d0d",
       "fam": "drag_bars",
       "const#top_bar_const": {
         "h": "pixel(35)"
       },
       "label#window_title": {
-        "@bar_label": "all",
-        "fs": "28",
+        "fs": "25",
+        "color": "WHITE",
+        "tc": "BLACK",
+        "text": "testing",
+        "pad": "5",
         "const#file_label_const": {
           "x": "stick(LEFT)",
           "y": "stick(TOP)"
         }
       },
       "label#window_close": {
-        "ff": "bold",
-        "fs": "20",
-        "fc": "WHITE",
-        "txt": "X",
-        "c": "DARK_RED",
-        "pad": "5, 10, 10, 10",
+        "textFamily": "regular",
+        "fontSize": "25",
+        "textColor": "WHITE",
+        "text": "X",
+        "color": "DARK_RED",
+        "pad": "10, 10, 5, 5",
         "rad": "0",
         "const#close_label_const": {
           "x": "stick(RIGHT)",
           "y": "stick(TOP)"
+        }
+      }
+    },
+    "block#main_view": {
+      "pad": "5",
+      "background": "background.jpg",
+      "opacity": "0.2",
+      "const#main_view_const": {
+        "x": "stick(LEFT)",
+        "y": "stick(BOTTOM)#top_bar_const",
+        "w": "rel(1)",
+        "h": "rel(1)"
+      },
+      "vbox#search_box": {
+        "pad": "5",
+        "color": "TRANSPARENT",
+        "const#search_box_const": {
+          "x": "center",
+          "y": "rel(0.1)",
+          "w": "rel(0.8)"
+        },
+        "label#search_label": {
+          "textFamily": "bold",
+          "fontSize": "50",
+          "textColor": "WHITE",
+          "text": "FIND YOUR FORTNITE STATS",
+          "color": "#3a80f0",
+          "pad": "10, 10, 5, 5",
+          "rad": "0",
+          "const#close_label_const": {
+            "x": "center",
+            "y": "stick(TOP)"
+          }
+        },
+        "tbox#epic_input": {
+          "textFamily": "light",
+          "fontSize": "25",
+          "textColor": "WHITE",
+          "indent": "7",
+          "color": "#0d0d0d",
+          "hover": "#0d0d0d",
+          "pad": "3,3,5,3",
+          "rad": "3",
+          "txt": "Enter your epic name...",
+          "const#xval_tbox_const": {
+            "x": "center",
+            "w": "rel(0.33)"
+          }
+        }
+      },
+      "block#wrapper": {
+        "color": "LIGHT_GREY",
+        "pad": "0",
+        "rad": "5",
+        "const#wrapper_const": {
+          "x": "center",
+          "y": "stick(BOTTOM, pixel(10))",
+          "w": "rel(1, pixel(-20))",
+          "h": "rel(0.55)"
+        },
+        "vbox#solo_container": {
+          "pad": "5,0,0,0",
+          "color": "GRAY",
+          "const#solo_container_const": {
+            "x": "stick(LEFT, pixel(10))",
+            "y": "stick(TOP, pixel(10))",
+            "w": "rel(0.33, pixel(-10))",
+            "h": "rel(0.5)"
+          },
+          "bar#solo_bar": {
+            "color": "#0d0d0d",
+            "fam": "drag_bars",
+            "const#solo_bar_const": {
+              "h": "pixel(35)"
+            },
+            "label#solo_title": {
+              "fs": "25",
+              "color": "#3a80f0",
+              "tc": "WHITE",
+              "text": "solo",
+              "pad": "5",
+              "const#solo_title_const": {
+                "x": "stick(LEFT)",
+                "y": "stick(TOP)"
+              }
+            }
+          },
+          "label#solo_wins_val_label": {
+            "fs": "25",
+            "color": "WHITE",
+            "tc": "BLACK",
+            "text": "total wins",
+            "pad": "3",
+            "const#solo_wins_val_label_const": {
+              "x": "stick(LEFT)",
+              "h": "pixel(35)",
+              "y": "pixel(0)"
+            }
+          },
+          "label#solo_wins_val": {
+            "fs": "25",
+            "color": "#0d0d0d",
+            "tc": "WHITE",
+            "text": "n/a",
+            "pad": "3",
+            "const#solo_wins_val_const": {
+              "x": "stick(RIGHT)#solo_wins_val_label_const",
+              "y": "stick(TOP)#solo_wins_val_label_const",
+              "h": "pixel(35)"
+            }
+          },
+          "label#solo_kills_val": {
+            "fs": "25",
+            "color": "#0d0d0d",
+            "tc": "WHITE",
+            "text": "n/a",
+            "pad": "3",
+            "const#solo_kills_val_const": {
+              "x": "stick(LEFT)#solo_kills_val_label",
+              "y": "stick(TOP)#solo_wins_val_label_const",
+              "h": "pixel(35)"
+            }
+          },
+          "label#solo_kills_val_label": {
+            "fs": "25",
+            "color": "WHITE",
+            "tc": "BLACK",
+            "text": "kills",
+            "pad": "3",
+            "const#solo_kills_val_label_const": {
+              "x": "stick(RIGHT)",
+              "h": "pixel(35)",
+              "y": "stick(TOP)#solo_kills_val_const"
+            }
+          },
+          "label#solo_wins_percent_val_label": {
+            "fs": "25",
+            "color": "WHITE",
+            "tc": "BLACK",
+            "text": "win %",
+            "pad": "3",
+            "const#solo_wins_percent_val_label_const": {
+              "x": "stick(LEFT)",
+              "h": "pixel(35)",
+              "y": "pixel(0)"
+            }
+          },
+          "label#solo_wins_percent_val": {
+            "fs": "25",
+            "color": "#0d0d0d",
+            "tc": "WHITE",
+            "text": "n/a",
+            "pad": "3",
+            "const#solo_wins_percent_val_const": {
+              "x": "stick(RIGHT)#solo_wins_percent_val_label_const",
+              "y": "stick(TOP)#solo_wins_percent_val_label_const",
+              "h": "pixel(35)"
+            }
+          },
+          "label#solo_kd_val": {
+            "fs": "25",
+            "color": "#0d0d0d",
+            "tc": "WHITE",
+            "text": "n/a",
+            "pad": "3",
+            "const#solo_kd_const": {
+              "x": "stick(LEFT)#solo_kd_val_label",
+              "y": "stick(TOP)#solo_wins_percent_val_const",
+              "h": "pixel(35)"
+            }
+          },
+          "label#solo_kd_val_label": {
+            "fs": "25",
+            "color": "WHITE",
+            "tc": "BLACK",
+            "text": "k/d",
+            "pad": "3",
+            "const#solo_kd_val_label_const": {
+              "x": "stick(RIGHT)",
+              "h": "pixel(35)",
+              "y": "stick(TOP)#solo_kd_const"
+            }
+          }
+        },
+        "vbox#duo_container": {
+          "pad": "5,0,0,0",
+          "color": "GRAY",
+          "const#duo_container_const": {
+            "x": "stick(RIGHT, pixel(-10))#solo_container",
+            "y": "stick(TOP, pixel(10))",
+            "w": "rel(0.33, pixel(-10))",
+            "h": "rel(0.5)"
+          },
+          "bar#duo_bar": {
+            "color": "#0d0d0d",
+            "fam": "drag_bars",
+            "const#duo_bar_const": {
+              "h": "pixel(35)"
+            },
+            "label#duo_title": {
+              "fs": "25",
+              "color": "#24ab67",
+              "tc": "WHITE",
+              "text": "duo",
+              "pad": "5",
+              "const#duo_title_const": {
+                "x": "stick(LEFT)",
+                "y": "stick(TOP)"
+              }
+            }
+          },
+          "label#duo_wins_val_label": {
+            "fs": "25",
+            "color": "WHITE",
+            "tc": "BLACK",
+            "text": "total wins",
+            "pad": "3",
+            "const#duo_wins_val_label_const": {
+              "x": "stick(LEFT)",
+              "h": "pixel(35)",
+              "y": "pixel(0)"
+            }
+          },
+          "label#duo_wins_val": {
+            "fs": "25",
+            "color": "#0d0d0d",
+            "tc": "WHITE",
+            "text": "n/a",
+            "pad": "3",
+            "const#duo_wins_val_const": {
+              "x": "stick(RIGHT)#duo_wins_val_label_const",
+              "y": "stick(TOP)#duo_wins_val_label_const",
+              "h": "pixel(35)"
+            }
+          },
+          "label#duo_kills_val": {
+            "fs": "25",
+            "color": "#0d0d0d",
+            "tc": "WHITE",
+            "text": "n/a",
+            "pad": "3",
+            "const#duo_kills_val_const": {
+              "x": "stick(LEFT)#duo_kills_val_label",
+              "y": "stick(TOP)#duo_wins_val_label_const",
+              "h": "pixel(35)"
+            }
+          },
+          "label#duo_kills_val_label": {
+            "fs": "25",
+            "color": "WHITE",
+            "tc": "BLACK",
+            "text": "kills",
+            "pad": "3",
+            "const#duo_kills_val_label_const": {
+              "x": "stick(RIGHT)",
+              "h": "pixel(35)",
+              "y": "stick(TOP)#duo_kills_val_const"
+            }
+          },
+          "label#duo_wins_percent_val_label": {
+            "fs": "25",
+            "color": "WHITE",
+            "tc": "BLACK",
+            "text": "win %",
+            "pad": "3",
+            "const#duo_wins_percent_val_label_const": {
+              "x": "stick(LEFT)",
+              "h": "pixel(35)",
+              "y": "pixel(0)"
+            }
+          },
+          "label#duo_wins_percent_val": {
+            "fs": "25",
+            "color": "#0d0d0d",
+            "tc": "WHITE",
+            "text": "n/a",
+            "pad": "3",
+            "const#duo_wins_percent_val_const": {
+              "x": "stick(RIGHT)#duo_wins_percent_val_label_const",
+              "y": "stick(TOP)#duo_wins_percent_val_label_const",
+              "h": "pixel(35)"
+            }
+          },
+          "label#duo_kd_val": {
+            "fs": "25",
+            "color": "#0d0d0d",
+            "tc": "WHITE",
+            "text": "n/a",
+            "pad": "3",
+            "const#duo_kd_const": {
+              "x": "stick(LEFT)#duo_kd_val_label",
+              "y": "stick(TOP)#duo_wins_percent_val_const",
+              "h": "pixel(35)"
+            }
+          },
+          "label#duo_kd_val_label": {
+            "fs": "25",
+            "color": "WHITE",
+            "tc": "BLACK",
+            "text": "k/d",
+            "pad": "3",
+            "const#duo_kd_val_label_const": {
+              "x": "stick(RIGHT)",
+              "h": "pixel(35)",
+              "y": "stick(TOP)#duo_kd_const"
+            }
+          }
+        },
+        "vbox#squad_container": {
+          "pad": "5,0,0,0",
+          "color": "GRAY",
+          "const#squad_container_const": {
+            "x": "stick(RIGHT, pixel(-10))#duo_container",
+            "y": "stick(TOP, pixel(10))",
+            "w": "rel(0.33, pixel(-10))",
+            "h": "rel(0.5)"
+          },
+          "bar#squad_bar": {
+            "color": "#0d0d0d",
+            "fam": "drag_bars",
+            "const#squad_bar_const": {
+              "h": "pixel(35)"
+            },
+            "label#squad_title": {
+              "fs": "25",
+              "color": "#9c26bf",
+              "tc": "WHITE",
+              "text": "squad",
+              "pad": "5",
+              "const#squad_title_const": {
+                "x": "stick(LEFT)",
+                "y": "stick(TOP)"
+              }
+            }
+          },
+          "label#squad_wins_val_label": {
+            "fs": "25",
+            "color": "WHITE",
+            "tc": "BLACK",
+            "text": "total wins",
+            "pad": "3",
+            "const#squad_wins_val_label_const": {
+              "x": "stick(LEFT)",
+              "h": "pixel(35)",
+              "y": "pixel(0)"
+            }
+          },
+          "label#squad_wins_val": {
+            "fs": "25",
+            "color": "#0d0d0d",
+            "tc": "WHITE",
+            "text": "n/a",
+            "pad": "3",
+            "const#squad_wins_val_const": {
+              "x": "stick(RIGHT)#squad_wins_val_label_const",
+              "y": "stick(TOP)#squad_wins_val_label_const",
+              "h": "pixel(35)"
+            }
+          },
+          "label#squad_kills_val": {
+            "fs": "25",
+            "color": "#0d0d0d",
+            "tc": "WHITE",
+            "text": "n/a",
+            "pad": "3",
+            "const#squad_kills_val_const": {
+              "x": "stick(LEFT)#squad_kills_val_label",
+              "y": "stick(TOP)#squad_wins_val_label_const",
+              "h": "pixel(35)"
+            }
+          },
+          "label#squad_kills_val_label": {
+            "fs": "25",
+            "color": "WHITE",
+            "tc": "BLACK",
+            "text": "kills",
+            "pad": "3",
+            "const#squad_kills_val_label_const": {
+              "x": "stick(RIGHT)",
+              "h": "pixel(35)",
+              "y": "stick(TOP)#squad_kills_val_const"
+            }
+          },
+          "label#squad_wins_percent_val_label": {
+            "fs": "25",
+            "color": "WHITE",
+            "tc": "BLACK",
+            "text": "win %",
+            "pad": "3",
+            "const#squad_wins_percent_val_label_const": {
+              "x": "stick(LEFT)",
+              "h": "pixel(35)",
+              "y": "pixel(0)"
+            }
+          },
+          "label#squad_wins_percent_val": {
+            "fs": "25",
+            "color": "#0d0d0d",
+            "tc": "WHITE",
+            "text": "n/a",
+            "pad": "3",
+            "const#squad_wins_percent_val_const": {
+              "x": "stick(RIGHT)#squad_wins_percent_val_label_const",
+              "y": "stick(TOP)#squad_wins_percent_val_label_const",
+              "h": "pixel(35)"
+            }
+          },
+          "label#squad_kd_val": {
+            "fs": "25",
+            "color": "#0d0d0d",
+            "tc": "WHITE",
+            "text": "n/a",
+            "pad": "3",
+            "const#squad_kd_const": {
+              "x": "stick(LEFT)#squad_kd_val_label",
+              "y": "stick(TOP)#squad_wins_percent_val_const",
+              "h": "pixel(35)"
+            }
+          },
+          "label#squad_kd_val_label": {
+            "fs": "25",
+            "color": "WHITE",
+            "tc": "BLACK",
+            "text": "k/d",
+            "pad": "3",
+            "const#squad_kd_val_label_const": {
+              "x": "stick(RIGHT)",
+              "h": "pixel(35)",
+              "y": "stick(TOP)#squad_kd_const"
+            }
+          }
+        },
+        "block#lifetime_container": {
+          "pad": "5,0,0,0",
+          "color": "GRAY",
+          "const#solo_container_const": {
+            "x": "center",
+            "y": "stick(BOTTOM, pixel(10))",
+            "w": "rel(0.5)",
+            "h": "pixel(65)"
+          },
+          "bar#lifetime_bar": {
+            "color": "#0d0d0d",
+            "fam": "drag_bars",
+            "const#lifetime_bar_const": {
+              "h": "pixel(35)"
+            },
+            "label#lifetime_title": {
+              "fs": "25",
+              "color": "#d4af37",
+              "tc": "WHITE",
+              "text": "lifetime",
+              "pad": "5",
+              "const#lifetime_title_const": {
+                "x": "stick(LEFT)",
+                "y": "stick(TOP)"
+              }
+            }
+          },
+          "hbox#lifetime_val_container": {
+            "pad": "12,0,0,0",
+            "color": "TRANSPARENT",
+            "const#lifetime_val_container_const": {
+              "x": "stick(LEFT)",
+              "y": "stick(TOP)"
+            },
+            "label#lifetime_wins_val_label": {
+              "fs": "25",
+              "color": "WHITE",
+              "tc": "BLACK",
+              "text": "total wins",
+              "pad": "2",
+              "const#lifetime_wins_val_label_const": {
+                "x": "pixel(-12)",
+                "h": "pixel(35)",
+                "y": "stick(BOTTOM, pixel(0))#lifetime_title_const"
+              }
+            },
+            "label#lifetime_wins_val": {
+              "fs": "25",
+              "color": "#0d0d0d",
+              "tc": "WHITE",
+              "text": "n/a",
+              "pad": "3",
+              "const#lifetime_wins_val_label_const": {
+                "x": "pixel(-12)",
+                "h": "pixel(35)",
+                "y": "stick(BOTTOM, pixel(0))#lifetime_title_const"
+              }
+            },
+            "label#lifetime_wins_percent_val_label": {
+              "fs": "25",
+              "color": "WHITE",
+              "tc": "BLACK",
+              "text": "win %",
+              "pad": "2",
+              "const#lifetime_wins_percent_val_label_const": {
+                "x": "stick(RIGHT, pixel(-10))#lifetime_wins_val_label_const",
+                "h": "pixel(35)",
+                "y": "stick(BOTTOM, pixel(0))#lifetime_title_const"
+              }
+            },
+            "label#lifetime_wins_percent_val": {
+              "fs": "25",
+              "color": "#0d0d0d",
+              "tc": "WHITE",
+              "text": "n/a",
+              "pad": "3",
+              "const#lifetime_wins_percent_val_label_const": {
+                "x": "pixel(-12)",
+                "h": "pixel(35)",
+                "y": "stick(BOTTOM, pixel(0))#lifetime_title_const"
+              }
+            },
+            "label#lifetime_kills_val_label": {
+              "fs": "25",
+              "color": "WHITE",
+              "tc": "BLACK",
+              "text": "kills",
+              "pad": "2",
+              "const#lifetime_kills_val_label_const": {
+                "x": "stick(LEFT, pixel(-10))#lifetime_kd_val_const",
+                "h": "pixel(35)",
+                "y": "stick(BOTTOM, pixel(0))#lifetime_title_const"
+              }
+            },
+            "label#lifetime_kills_val": {
+              "fs": "25",
+              "color": "#0d0d0d",
+              "tc": "WHITE",
+              "text": "n/a",
+              "pad": "3",
+              "const#lifetime_kills_val_const": {
+                "x": "pixel(-12)",
+                "h": "pixel(35)",
+                "y": "stick(BOTTOM, pixel(0))#lifetime_title_const"
+              }
+            },
+            "label#lifetime_kd_val_label": {
+              "fs": "25",
+              "color": "WHITE",
+              "tc": "BLACK",
+              "text": "kd",
+              "pad": "2",
+              "const#lifetime_kd_val_label_const": {
+                "x": "stick(RIGHT)",
+                "h": "pixel(35)",
+                "y": "stick(BOTTOM, pixel(0))#lifetime_title_const"
+              }
+            },
+            "label#lifetime_kd_val": {
+              "fs": "25",
+              "color": "#0d0d0d",
+              "tc": "WHITE",
+              "text": "n/a",
+              "pad": "3",
+              "const#lifetime_kd_val_const": {
+                "x": "pixel(-12)",
+                "h": "pixel(35)",
+                "y": "stick(BOTTOM, pixel(0))#lifetime_title_const"
+              }
+            }
+          }
         }
       }
     }
